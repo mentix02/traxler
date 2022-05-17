@@ -6,6 +6,15 @@ __pycache__/
 # C extensions
 *.so
 
+# IDE files
+.idea/
+
+# Docker volumes
+data/
+
+# Contact stuff
+CONTACT.txt
+
 # Distribution / packaging
 .Python
 build/
