@@ -25,6 +25,8 @@ const props = defineProps<{
             : "Intrastate"
         }}</strong>
         <br />
+        Issued On : <strong>{{ taxDue.issued_on }}</strong>
+        <br />
         Salary Income : ₹<strong>{{ taxDue.salary_income }}</strong>
         <br />
         Share Market Income: ₹<strong>{{ taxDue.share_market_income }}</strong>
