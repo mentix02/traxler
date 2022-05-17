@@ -9,7 +9,7 @@ from tax.models import Tax, TaxDue, State
 class StateAdmin(admin.ModelAdmin):
     list_display = ('name', 'is_ut', 'tax_rate', 'code')
 
-    # noinspection PyMethodMayBeStatic
+    @admin.display
     def tax_rate(self, obj):
         return f'{obj.tax}%'
 
@@ -18,7 +18,12 @@ class StateAdmin(admin.ModelAdmin):
 class TaxAdmin(admin.ModelAdmin):
     list_display = ('due_date', 'payer', 'updated_on')
 
-    def payer(self, obj):
+    @admin.display
+    def due_date(self, obj: Tax):
+        return obj.active_due.due_date
+
+    @admin.display
+    def payer(self, obj: Tax):
         url = reverse('admin:user_user_change', args=(obj.payer.id,))
         return format_html(f'<a href="{url}">{obj.payer.username}</a>')
 

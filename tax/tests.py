@@ -77,15 +77,20 @@ class TaxUpdateTests(APITestCase):
 
     def test_taxpayer_cannot_update_tax(self):
         self.client.force_login(user=self.taxpayer)
+        fake_active_due_data = create_fake_tax_serializer_data(
+            self.taxpayer, self.unpaid_tax.active_due.due_date + timedelta(days=10)
+        )['active_due']
 
         response = self.client.patch(
             reverse('tax:tax-retrieve-update', kwargs={'pk': self.unpaid_tax.pk}),
-            data={'due_date': str(self.unpaid_tax.due_date + timedelta(days=10))},
+            format='json',
+            data={'active_due': fake_active_due_data},
         )
 
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
         self.assertEqual(
-            Tax.objects.get(pk=self.unpaid_tax.pk).due_date, self.unpaid_tax.due_date
+            Tax.objects.get(pk=self.unpaid_tax.pk).active_due.due_date,
+            self.unpaid_tax.active_due.due_date,
         )
 
         self.client.logout()
@@ -93,21 +98,22 @@ class TaxUpdateTests(APITestCase):
     def test_only_accountant_or_admin_can_update_tax(self):
 
         self.client.force_login(user=self.accountant)
+        fake_active_due_data = create_fake_tax_serializer_data(
+            self.taxpayer, self.unpaid_tax.active_due.due_date + timedelta(days=10)
+        )['active_due']
 
         # say, a benevolent accountant postpones the due date by 10 days
         response = self.client.patch(
             reverse('tax:tax-retrieve-update', kwargs={'pk': self.unpaid_tax.pk}),
-            data={'due_date': str(self.unpaid_tax.due_date + timedelta(days=10))},
+            format='json',
+            data={'active_due': fake_active_due_data},
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK, msg=response.data)
+        self.assertEqual(TaxDue.objects.count(), 3)
         self.assertEqual(
-            response.data['due_date'],
-            str(self.unpaid_tax.due_date + timedelta(days=10)),
-        )
-        self.assertEqual(
-            Tax.objects.get(pk=self.unpaid_tax.pk).due_date,
-            self.unpaid_tax.due_date + timedelta(days=10),
+            str(Tax.objects.get(pk=self.unpaid_tax.pk).active_due.due_date),
+            fake_active_due_data['due_date'],
         )
         self.client.logout()
 

@@ -10,7 +10,7 @@ __pycache__/
 .idea/
 
 # Docker volumes
-data/
+pg_data/
 
 # Contact stuff
 CONTACT.txt

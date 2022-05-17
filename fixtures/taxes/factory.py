@@ -11,7 +11,7 @@ from tax.models import Tax, TaxDue
 def create_fake_tax_serializer_data(
     payer: User,
     due_date: date = None,
-) -> dict[str, Union[str, int, bool]]:
+) -> dict:
 
     if not due_date:
         due_date = timezone.now().date() + timezone.timedelta(

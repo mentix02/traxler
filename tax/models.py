@@ -98,7 +98,7 @@ class TaxDue(models.Model):
             # simple field editing, continue as normal
             super().save(*args, **kwargs)
 
-        if self.tax.status == Tax.STATUS_PAID:
+        if self.tax.paid:
             raise ValidationError('Cannot edit paid taxes')
 
         # Check if there are any past dues for this tax
