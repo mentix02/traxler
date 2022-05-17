@@ -21,7 +21,7 @@ export default defineComponent({
     async handleEdit(_: Event) {
       this.loading = true;
       await editTax(this.tax.id!, this.tax);
-      await this.$router.push({ name: "taxes" });
+      window.location.reload();
     },
   },
   mounted() {
@@ -90,7 +90,7 @@ export default defineComponent({
                 type="number"
                 id="salary_income"
                 class="form-control"
-                v-model="tax.history[tax.history.length - 1].salary_income"
+                v-model="tax.active_due.salary_income"
               />
             </div>
           </div>

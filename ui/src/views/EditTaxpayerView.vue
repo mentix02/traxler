@@ -20,7 +20,7 @@ export default defineComponent({
       const username = this.$route.params.username as string;
       this.loading = true;
       await editTaxPayer(username, this.userData);
-      await this.$router.push({ name: "home" });
+      window.location.reload();
     },
   },
   async mounted() {

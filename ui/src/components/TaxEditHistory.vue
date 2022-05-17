@@ -1,10 +1,21 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import type { TaxDueInfo } from "@/api/types/tax";
 import { INTERSTATE_TRANSACTION } from "@/api/types/tax";
 
 const props = defineProps<{
   history?: TaxDueInfo[];
 }>();
+
+const selfHistory = ref<TaxDueInfo[]>([]);
+
+const intv = setInterval(() => {
+  if (props.history !== undefined) {
+    selfHistory.value = JSON.parse(JSON.stringify(props.history));
+    clearInterval(intv);
+  }
+}, 200);
 </script>
 
 <template>
@@ -12,7 +23,7 @@ const props = defineProps<{
     <li
       class="event"
       :data-date="taxDue.issued_on"
-      v-for="taxDue in props.history"
+      v-for="taxDue in selfHistory"
     >
       <h1>Total : ₹{{ taxDue.total }}</h1>
       <p>
@@ -25,7 +36,7 @@ const props = defineProps<{
             : "Intrastate"
         }}</strong>
         <br />
-        Issued On : <strong>{{ taxDue.issued_on }}</strong>
+        Due Date : <strong>{{ taxDue.due_date }}</strong>
         <br />
         Salary Income : ₹<strong>{{ taxDue.salary_income }}</strong>
         <br />

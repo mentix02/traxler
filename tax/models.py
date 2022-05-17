@@ -109,3 +109,6 @@ class TaxDue(models.Model):
 
     def __str__(self) -> str:
         return f'{self.issued_on} - Rs. {self.total}'
+
+    class Meta:
+        ordering = ('-issued_on', '-pk')

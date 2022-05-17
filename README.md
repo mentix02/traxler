@@ -2,6 +2,9 @@
 
 A simple GST management system written in Python.
 
+**note - please do not visit the http://0.0.0.0:8000 url as shown in the video**
+**instead, go to [http://localhost:8000](http://localhost:8000).**
+
 Please view [this](https://youtu.be/4V2G0QmpLHw) video for a demo / build instructions.
 
 ## Tech Stack
@@ -47,7 +50,8 @@ $ docker exec traxler-web-1 python manage.py loaddata fixtures/states/data.json
 $ docker exec traxler-web-1 python manage.py loaddata fixtures/users/data.json # load users
 ```
 
-Visit the link provided in the `docker-compose` command - [http://0.0.0.0:8000](http://0.0.0.0:8000) and start exploring!
+**DO NOT** visit the link provided in the `docker-compose` command.
+Instead, visit this [http://localhost:8000](http://localhost:8000) url and start exploring!
 
 ### Tests
 
