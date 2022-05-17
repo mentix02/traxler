@@ -14,10 +14,11 @@ export type StatusType =
   | typeof STATUS_NEW
   | typeof STATUS_DELAYED;
 
-type TaxDueInfo = {
+export type TaxDueInfo = {
   cgst: number;
   total: number;
   active: boolean;
+  due_date: string;
   issued_on: string;
   salary_income: number;
   share_market_income: number;
@@ -28,7 +29,6 @@ export type Tax = {
   id: number;
   sgst: number;
   paid: boolean;
-  due_date: string;
   status: StatusType;
   updated_on: string;
   payer: string | number;
@@ -39,11 +39,11 @@ export type Tax = {
 export type CreateUpdateTaxData = {
   id?: number;
   payer: number;
-  due_date: string;
   payer_name?: string;
   history?: TaxDueInfo[];
   active_due: {
     cgst: number;
+    due_date: string;
     salary_income: number;
     share_market_income: number;
     transaction_type: TransactionType;

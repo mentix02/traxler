@@ -15,7 +15,7 @@ A simple GST management system written in Python.
   - alpine as container OS
 
 ## Users
-All users have a password of "abcd" - but each of them have been hashed with argon2. Django takes
+All users have a password of `abcd` - but each of them have been hashed with argon2. Django takes
 care of salting and hashing appropriately.
 ![users](https://i.imgur.com/2keO4V4.png)
 
@@ -24,7 +24,7 @@ care of salting and hashing appropriately.
 ### Build
 
 Open a terminal window and run from the root project directory - 
-**note - the first startup might take some time**
+**note - the first startup might take some time to build**
 
 ```bash
 docker-compose up
@@ -38,14 +38,15 @@ To load the fixtures, run -
 # VERY IMPORTANT - states should be loaded first
 docker exec traxler-web-1 python manage.py loaddata fixtures/states/data.json
 
-docker exec traxler-web-1 scripts/admin.sh  # creates an admin user
 docker exec traxler-web-1 python manage.py loaddata fixtures/users/data.json # load users
-docker exec traxler-web-1 python manage.py loaddata fixtures/taxes/data.json # load taxes
 ```
 
+Visit the link provided in the `docker-comose` up command - [http://0.0.0.0:8000](http://0.0.0.0:8000) and start exploring!
+
 ### Tests
-To run tests (make sure the docker-compose up terminal is running) -
+To run tests (make sure the traxler-web-1 image is still running) -
 **note - the Unauthorized & Forbidden messages aren't failures**
+
 ```bash
 docker exec traxler-web-1 python manage.py test --keepdb
 ```

@@ -25,7 +25,6 @@ class Tax(models.Model):
     STATUS_PAID = 'Paid'
     STATUS_DELAYED = 'Delayed'
 
-    due_date = models.DateField('Due date')
     paid = models.BooleanField(default=False)
     updated_on = models.DateField(auto_now=True)
     sgst = models.PositiveSmallIntegerField(
@@ -49,7 +48,7 @@ class Tax(models.Model):
         today = timezone.now().date()
         if self.paid:
             return Tax.STATUS_PAID
-        elif self.due_date < date(today.year, today.month, today.day):
+        elif self.active_due.due_date < date(today.year, today.month, today.day):
             return Tax.STATUS_DELAYED
         else:
             return Tax.STATUS_NEW
@@ -71,6 +70,7 @@ class TaxDue(models.Model):
         (TRANSACTION_INTRASTATE, 'Intrastate'),
     )
 
+    due_date = models.DateField('Due date')
     active = models.BooleanField(default=True)
     issued_on = models.DateField(auto_now_add=True)
     salary_income = models.FloatField('Salary income')

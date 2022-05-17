@@ -19,12 +19,12 @@ export default defineComponent({
     taxpayers: [] as TaxpayerUsernameId[],
     tax: {
       payer: 0,
-      due_date: new Date().toISOString().substring(0, 10),
       active_due: {
         cgst: 0,
         salary_income: 0,
         share_market_income: 0,
         transaction_type: INTERSTATE_TRANSACTION,
+        due_date: new Date().toISOString().substring(0, 10),
       },
     } as CreateUpdateTaxData,
   }),
@@ -132,7 +132,7 @@ export default defineComponent({
           type="date"
           id="due_date"
           class="form-control"
-          v-model="tax.due_date"
+          v-model="tax.active_due.due_date"
         />
       </div>
       <div class="col-sm-12 col-md-12 col-lg-3 mb-3">
@@ -156,8 +156,8 @@ export default defineComponent({
             class="btn btn-primary btn-block"
             :disabled="
               !tax.payer ||
-              !tax.due_date ||
               !tax.active_due.cgst ||
+              !tax.active_due.due_date ||
               !tax.active_due.salary_income ||
               !tax.active_due.share_market_income
             "

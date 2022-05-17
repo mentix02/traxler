@@ -20,8 +20,8 @@ def create_fake_tax_serializer_data(
 
     return dict(
         payer=payer.id,
-        due_date=str(due_date),
         active_due=dict(
+            due_date=str(due_date),
             cgst=random.randint(4, 35),
             transaction_type=random.random() > 0.5,
             salary_income=random.randint(10000, 100000),
@@ -43,12 +43,12 @@ def create_fake_tax(
 
     tax = Tax.objects.create(
         payer=payer,
-        due_date=due_date,
         sgst=payer.info.state.tax,
     )
 
     TaxDue.objects.create(
         tax=tax,
+        due_date=due_date,
         cgst=random.randint(4, 35),
         transaction_type=random.random() > 0.5,
         salary_income=random.randint(10000, 100000),

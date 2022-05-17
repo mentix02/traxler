@@ -192,7 +192,7 @@ onMounted(async () => {
             </span>
           </li>
           <li class="list-group-item">
-            Due : {{ tax.due_date }}
+            Due : {{ tax.active_due.due_date }}
             <span style="float: right">
               Issued : {{ tax.active_due.issued_on }}
             </span>

@@ -4,6 +4,7 @@ import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import SignUpView from "@/views/SignUpView.vue";
 import TaxListView from "@/views/TaxListView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
 import CreateTaxView from "@/views/CreateTaxView.vue";
 
 const router = createRouter({
@@ -43,6 +44,10 @@ const router = createRouter({
       path: "/create",
       name: "create",
       component: CreateTaxView,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: NotFoundView,
     },
   ],
 });
