@@ -17,7 +17,7 @@ urlpatterns = [
     ),
     path(
         'taxpayers/',
-        views.TaxpayerListAPIView.as_view(),
+        views.TaxpayerListCreateAPIView.as_view(),
         name='taxpayer-list-create',
     ),
     path(

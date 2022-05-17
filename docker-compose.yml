@@ -3,10 +3,10 @@ version: "3.9"
 services:
 
   db:
-    image: postgres
+    image: postgres:alpine
     user: postgres
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - ./pg_data/db:/var/lib/postgresql/data/
     healthcheck:
       test: ["CMD", "pg_isready", "-q"]
       retries: 3
@@ -20,7 +20,7 @@ services:
   web:
     build: .
     restart: always
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:

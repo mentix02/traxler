@@ -34,22 +34,37 @@ class BaseTaxSerializer(serializers.ModelSerializer):
 
 class TaxDetailSerializer(BaseTaxSerializer):
 
-    active_due = TaxDueSerializer(write_only=True)
+    active_due = TaxDueSerializer()
+    payer_name = serializers.SerializerMethodField()
     history = TaxDueSerializer(many=True, read_only=True)
-    view = serializers.HyperlinkedIdentityField(
-        'tax:tax-retrieve-update', lookup_field='pk', lookup_url_kwarg='pk'
-    )
+
+    # noinspection PyMethodMayBeStatic
+    def get_payer_name(self, obj: Tax):
+        return f'{obj.payer.get_full_name()} ({obj.payer.username})'
 
     def update(self, instance, validated_data):
 
-        active_due_data = validated_data.pop('active_due')
+        # Make sure the user who is updating the tax is not a taxpayer
+        if self.context['request'].user.role <= User.TAXPAYER:
+            raise serializers.ValidationError(
+                'Only tax accountants or admins can update taxes'
+            )
+
+        try:
+            active_due_data = validated_data.pop('active_due')
+        except KeyError:
+            active_due_data = None
 
         # First update fields of Tax object
         for field, value in validated_data.items():
             setattr(instance, field, value)
         instance.save()
 
-        # Then create a new TaxDue object since we keep track of old ones
+        # No active_due_data was provided, return instance
+        if active_due_data is None:
+            return instance
+
+        # Create a new TaxDue object since we keep track of old ones
         tax_due = TaxDue(tax=instance, active=True)
         for field, value in active_due_data.items():
             setattr(tax_due, field, value)
@@ -58,11 +73,17 @@ class TaxDetailSerializer(BaseTaxSerializer):
         return instance
 
     def create(self, validated_data: dict):
-        # make sure taxpayer has role of TAXPAYER
-        # & not a higher role
+
+        # Make sure the user who is creating the tax is not a taxpayer
+        if self.context['request'].user.role <= User.TAXPAYER:
+            raise serializers.ValidationError(
+                'Only tax accountants or admins can create taxes'
+            )
+
         taxpayer = validated_data['payer']
 
         active_due_data = validated_data.pop('active_due')
+
         if taxpayer.role != User.TAXPAYER:
             raise serializers.ValidationError('Selected user must be a taxpayer')
 
@@ -79,6 +100,3 @@ class TaxDetailSerializer(BaseTaxSerializer):
 class TaxListSerializer(BaseTaxSerializer):
 
     payer = serializers.StringRelatedField()
-    view = serializers.HyperlinkedIdentityField(
-        'tax:tax-retrieve', lookup_field='pk', lookup_url_kwarg='pk'
-    )

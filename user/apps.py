@@ -7,4 +7,4 @@ class UserConfig(AppConfig):
 
     def ready(self):
         # noinspection PyUnresolvedReferences
-        from user.signals import create_user_info_and_token
+        from user.signals import assign_staff_status, create_user_info_and_token

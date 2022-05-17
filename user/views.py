@@ -21,7 +21,9 @@ from user.serializers import (
 class TaxpayerIdListAPIView(ListAPIView):
     serializer_class = TaxpayerIdSerializer
     permission_classes = (IsTaxAccountantOrAdmin,)
-    queryset = User.objects.filter(role=User.TAXPAYER).only('username')
+    queryset = User.objects.filter(role=User.TAXPAYER).only(
+        'username', 'first_name', 'last_name'
+    )
 
 
 class ObtainAuthTokenAPIView(CreateAPIView):
@@ -30,7 +32,7 @@ class ObtainAuthTokenAPIView(CreateAPIView):
     serializer_class = ObtainTokenSerializer
 
 
-class TaxpayerListAPIView(ListCreateAPIView):
+class TaxpayerListCreateAPIView(ListCreateAPIView):
     permission_classes = (IsAuthenticated, IsTaxAccountantOrAdmin)
     queryset = (
         User.objects.filter(role=User.TAXPAYER)

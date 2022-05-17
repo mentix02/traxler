@@ -64,11 +64,12 @@ def create_fake_info(user_id: int, last_name: str) -> Info:
     )
 
 
-def create_fake_user() -> User:
+def create_fake_user(role: int = User.TAXPAYER) -> User:
     return User.objects.create_user(
         username=fake.user_name(),
         email=fake.email(),
         password=DEFAULT_PASSWORD,
         first_name=fake.first_name(),
         last_name=fake.last_name(),
+        role=role,
     )

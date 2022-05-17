@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import type { TaxPayer } from "@/api/types/taxpayer";
+import { RouterLink } from "vue-router";
+
+import { formatTaxpayerName } from "@/utils";
 import { getTaxPayers } from "@/api/taxpayer";
+import type { TaxPayer } from "@/api/types/taxpayer";
 
 const taxpayers = ref<TaxPayer[]>();
 const loading = ref<boolean>(true);
@@ -22,7 +25,7 @@ onMounted(async () => {
     None found
   </h3>
   <br />
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="text-center" v-if="loading">
       <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
@@ -40,7 +43,7 @@ onMounted(async () => {
         }"
       >
         <div class="card-header">
-          {{ payer.username }} (#{{ payer.info.pan }})
+          {{ formatTaxpayerName(payer.username) }} (#{{ payer.info.pan }})
           <span
             class="badge rounded-pill"
             :class="{
@@ -67,8 +70,18 @@ onMounted(async () => {
         </div>
         <div class="card-footer">
           <div class="btn-group">
-            <a href="#" class="btn btn-outline-primary">view</a>
-            <a href="#" class="btn btn-outline-success">edit</a>
+            <RouterLink
+              :to="{ name: 'taxpayer', params: { username: payer.username } }"
+              class="btn btn-outline-primary"
+            >
+              view
+            </RouterLink>
+            <RouterLink
+              :to="{ name: 'taxpayer', params: { username: payer.username } }"
+              class="btn btn-outline-success"
+            >
+              edit
+            </RouterLink>
           </div>
         </div>
       </div>

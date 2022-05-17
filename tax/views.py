@@ -1,12 +1,9 @@
 from django.shortcuts import get_object_or_404
 
-from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import (
     ListAPIView,
-    RetrieveAPIView,
     ListCreateAPIView,
     RetrieveUpdateAPIView,
 )
@@ -25,21 +22,13 @@ class StateListAPIView(ListAPIView):
     serializer_class = StateSerializer
 
 
-class TaxRetrieveAPIView(RetrieveAPIView):
-    serializer_class = TaxListSerializer
-    permission_classes = (IsAuthenticated,)
-
-    def get_queryset(self):
-        return Tax.objects.filter(payer=self.request.user)
-
-
 class TaxRetrieveUpdateAPIView(RetrieveUpdateAPIView):
 
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
     serializer_class = TaxDetailSerializer
     permission_classes = (IsTaxAccountantOrAdmin,)
-    queryset = Tax.objects.all().prefetch_related('history')
+    queryset = Tax.objects.all().prefetch_related('history').select_related('payer')
 
 
 class PayTaxAPIView(APIView):
@@ -69,4 +58,4 @@ class TaxListCreateAPIView(ListCreateAPIView):
             qs = Tax.objects.filter(payer=user)
         else:
             qs = Tax.objects.all()
-        return qs.select_related('payer')
+        return qs.select_related('payer').order_by('-pk')

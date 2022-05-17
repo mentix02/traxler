@@ -1,0 +1,313 @@
+[
+  {
+    "model": "user.user",
+    "pk": 1,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$NDl1cW00N0ZZbG1RdGY1a2hHWjRPQQ$OIJNZRxmBXvE5wt+eIUBFuY0sZAq8CQj7svbCqGO47g",
+      "last_login": "2022-05-17T07:46:47.389Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Mr.",
+      "last_name": "Admin",
+      "email": "admin@traxler.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:46:30.245Z",
+      "role": 2,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 2,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$WDZBa2NUTnpaeUtIMHFDMkhSMmhGTA$/518Yx9A8AvqF8y6WZeY++oCvMxnhEOHRsQBghGCafk",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "w0terboi",
+      "first_name": "Percy",
+      "last_name": "Jackson",
+      "email": "son@poseidon.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:32Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 3,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$NkdZTUF5NUdCU0VDNWRKbzVBUHBZSQ$ubDM6LuTnMDyJv4weE+xlRbTr2aoz0Pf/V7aOUGrJS8",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "p00rl4wyer",
+      "first_name": "Rodion",
+      "last_name": "Raskolnikov",
+      "email": "catharsis@dostoevsky.rs",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:33Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 4,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$c3RhNzFlOE4wMzFHYWVoZmJmYkZjYQ$r4/FYnxgGig2pYK55iEiqgB39OP5NUaC0UiSfDRlfDc",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "mentix02",
+      "first_name": "Manan",
+      "last_name": "Yadav",
+      "email": "manan.yadav02@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:39Z",
+      "role": 1,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 5,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$eTlQYmh0Sm1jYjNCYWpwR2lxeXZaTA$hZZBfE09ShDQz+r5AhX7kex1Xn0SARgyKvrX0E457aA",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "s4ms3pi0l",
+      "first_name": "Elliot",
+      "last_name": "Alderson",
+      "email": "vx13n1913fn1s4@protonmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:40Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 6,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$RnlDUjdjdFFOcW1DdkQwMzVCZGFFVQ$LCVJfDzTo01kBGPYzFmzMdxnSO8HCSPSr59wKgOSuMc",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "r1ch1ronstark",
+      "first_name": "Tony",
+      "last_name": "Stark",
+      "email": "tony@starkindustries.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:40Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 7,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$VkFlRWR0MUpZWXZvcW5Ra216RnVodQ$Zr9fdTPi0J0sHL6AQCzpIr9jFPhcajNBYPbSHVh2G3Q",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "queenlene",
+      "first_name": "Dolores",
+      "last_name": "Haze",
+      "email": "haze@bitchx.org",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:41Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 8,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$TDhrYUM2S3Jia1NKbXRLZ2JJakh3bQ$9H3TlR76K+4LedMFX8V1Txf56b2bQUM3+Xe6h3JVH+E",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "thenose",
+      "first_name": "Sherlock",
+      "last_name": "Holmes",
+      "email": "221b@bakerst.co.uk",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:44Z",
+      "role": 1,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 9,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$eU5mZk1ZOENGUXJvcVpWYTBYcjhONQ$xCEdqjz24QTf0hV0B8wkkyceWU5EgsrAgA9nBQdiKZY",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "quidditchplayer",
+      "first_name": "Harry",
+      "last_name": "Potter",
+      "email": "pharry@hogwarts.co.uk",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:47Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.user",
+    "pk": 10,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$dmpVblNuOHNFSHlMY21aNHFVNm1yMg$tTXPC0izEqhvwRyxPI/diyiGIP9Vveq2O6t8Nw6CdRE",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "pun1sher",
+      "first_name": "Phoebe",
+      "last_name": "Bridgers",
+      "email": "thend@kyoto.jp",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-05-17T07:48:47Z",
+      "role": 0,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+
+  {
+    "model": "user.info",
+    "pk": 1,
+    "fields": {
+      "address": "466 Wheeler Drive Apt, HP 51229",
+      "business_name": "Traxler Tax Co",
+      "user": 1,
+      "pan": "BCDHA2488E",
+      "state": 9,
+      "gstin": "02BCDHA2488E1Z6"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 2,
+    "fields": {
+      "address": "20,000 Leagues Under the Sea, Atlantic",
+      "business_name": "Fish Friend & Fiend LTD",
+      "user": 2,
+      "pan": "LMNFL3578K",
+      "state": 6,
+      "gstin": "04LMNFL3578K1Z6"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 3,
+    "fields": {
+      "address": "40797 Russia\nSt. Petersburg 19192",
+      "business_name": "Murder Of Crows",
+      "user": 3,
+      "pan": "STUHM1257T",
+      "state": 2,
+      "gstin": "12STUHM1257T1Z7"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 4,
+    "fields": {
+      "address": "F-132 South City III, Gurgaon 121008",
+      "business_name": "Throwmyform ORG",
+      "user": 4,
+      "pan": "FGHCV0257N",
+      "state": 8,
+      "gstin": "02FGHCV0257N1Z8"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 5,
+    "fields": {
+      "address": "E-220 Webster LocksNorth St., NY 01097",
+      "business_name": "Mr. Robot CO",
+      "user": 5,
+      "pan": "OPQHG4699F",
+      "state": 11,
+      "gstin": "27OPQHG4699F1Z2"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 6,
+    "fields": {
+      "address": "Avengers Tower, NYC 10006",
+      "business_name": "Stark Industries",
+      "user": 6,
+      "pan": "EFGHR4449Q",
+      "state": 14,
+      "gstin": "19EFGHR4449Q1Z6"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 7,
+    "fields": {
+      "address": "G-436 Jacob Rd., MO 34539",
+      "business_name": "Evil Corp",
+      "user": 7,
+      "pan": "MNOHL1369Z",
+      "state": 8,
+      "gstin": "06MNOHL1369Z1Z7"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 8,
+    "fields": {
+      "address": "221-B Baker St, London",
+      "business_name": "Consulting Detective & Co",
+      "user": 8,
+      "pan": "ABCTM0139S",
+      "state": 33,
+      "gstin": "29ABCTM0139S1Z6"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 9,
+    "fields": {
+      "address": "Room of Requirements, 11th Floor, Howarts",
+      "business_name": "Dumbledore's Army",
+      "user": 9,
+      "pan": "MNOCB4799T",
+      "state": 36,
+      "gstin": "01MNOCB4799T1Z6"
+    }
+  },
+  {
+    "model": "user.info",
+    "pk": 10,
+    "fields": {
+      "address": "Payphone in Kyoto, Japan 29391",
+      "business_name": "Government Alien Drones & Ships",
+      "user": 10,
+      "pan": "KLMCF0057J",
+      "state": 19,
+      "gstin": "26KLMCF0057J1Z0"
+    }
+  }
+]

@@ -6,9 +6,12 @@ from user.models import User, Info as UserInfo
 
 
 class TaxpayerIdSerializer(serializers.ModelSerializer):
+
+    name = serializers.ReadOnlyField(source='get_full_name')
+
     class Meta:
         model = User
-        fields = ('id', 'username')
+        fields = ('id', 'username', 'name')
 
 
 class ObtainTokenSerializer(serializers.ModelSerializer):

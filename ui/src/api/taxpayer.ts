@@ -1,5 +1,7 @@
 import useAuthStore from "@/stores/auth";
 import configureEndpoint from "@/api/host";
+
+import type { UserEditData } from "@/api/types/auth";
 import type { TaxPayer, TaxpayerUsernameId } from "@/api/types/taxpayer";
 
 const BASE_URL = configureEndpoint("api/v1/users");
@@ -17,21 +19,28 @@ export const getTaxpayerUsernames = async (): Promise<TaxpayerUsernameId[]> => {
   return await response.json();
 };
 
-export const editTaxPayer = async (username: string, updatedData: TaxPayer) => {
+export const editTaxPayer = async (
+  username: string,
+  updatedData: UserEditData
+) => {
   const authStore = useAuthStore();
 
   if (!authStore.isAuthenticated || authStore.user!.role < 1)
     throw new Error("Unauthorized.");
 
-  const formData = new FormData();
-
-  const response = await fetch(`${BASE_URL}/taxpayers/${username}/`, {
+  await fetch(`${BASE_URL}/taxpayers/${username}/`, {
     method: "PUT",
-    headers: { Authorization: `Token ${authStore.token}` },
+    body: JSON.stringify(updatedData),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Token ${authStore.token}`,
+    },
   });
 };
 
-export const getTaxPayer = async (username: string): Promise<TaxPayer> => {
+export const getTaxPayerData = async (
+  username: string
+): Promise<UserEditData> => {
   const authStore = useAuthStore();
 
   if (!authStore.isAuthenticated || authStore.user!.role < 1)

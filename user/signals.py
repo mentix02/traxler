@@ -12,6 +12,8 @@ from fixtures.users.factory import create_fake_info
 def assign_staff_status(sender, instance: User, **kwargs):
     if instance.role > User.TAXPAYER:
         instance.is_staff = True
+    if instance.role == User.ADMIN:
+        instance.is_superuser = True
 
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)

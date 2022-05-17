@@ -20,5 +20,6 @@ export type TaxPayer = {
 
 export type TaxpayerUsernameId = {
   id: number;
+  name: string;
   username: string;
 };

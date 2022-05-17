@@ -21,14 +21,6 @@ class State(models.Model):
 
 class Tax(models.Model):
 
-    TRANSACTION_INTERSTATE = True
-    TRANSACTION_INTRASTATE = False
-
-    TRANSACTION_TYPE_CHOICES = (
-        (TRANSACTION_INTERSTATE, 'Interstate'),
-        (TRANSACTION_INTRASTATE, 'Intrastate'),
-    )
-
     STATUS_NEW = 'New'
     STATUS_PAID = 'Paid'
     STATUS_DELAYED = 'Delayed'
@@ -38,14 +30,6 @@ class Tax(models.Model):
     updated_on = models.DateField(auto_now=True)
     sgst = models.PositiveSmallIntegerField(
         'State tax', help_text='Tax rate in percentage for state'
-    )
-    cgst = models.PositiveSmallIntegerField(
-        'Central tax',
-        help_text='Tax rate in percentage for CGST',
-    )
-    transaction_type = models.BooleanField(
-        choices=TRANSACTION_TYPE_CHOICES,
-        default=TRANSACTION_INTRASTATE,
     )
     payer = models.ForeignKey(
         'user.User',
@@ -79,15 +63,31 @@ class Tax(models.Model):
 
 class TaxDue(models.Model):
 
+    TRANSACTION_INTERSTATE = True
+    TRANSACTION_INTRASTATE = False
+
+    TRANSACTION_TYPE_CHOICES = (
+        (TRANSACTION_INTERSTATE, 'Interstate'),
+        (TRANSACTION_INTRASTATE, 'Intrastate'),
+    )
+
     active = models.BooleanField(default=True)
     issued_on = models.DateField(auto_now_add=True)
     salary_income = models.FloatField('Salary income')
     share_market_income = models.FloatField('Share market income')
     tax = models.ForeignKey(Tax, on_delete=models.CASCADE, related_name='history')
+    cgst = models.PositiveSmallIntegerField(
+        'Central tax',
+        help_text='Tax rate in percentage for CGST',
+    )
+    transaction_type = models.BooleanField(
+        choices=TRANSACTION_TYPE_CHOICES,
+        default=TRANSACTION_INTRASTATE,
+    )
 
     @property
     def total(self) -> float:
-        total_tax = self.tax.cgst + self.tax.sgst
+        total_tax = self.cgst + self.tax.sgst
         return round(
             (total_tax / 100) * (self.salary_income + self.share_market_income), 2
         )

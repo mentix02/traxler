@@ -3,7 +3,7 @@
     "pk": 1,
     "model": "tax.State",
     "fields": {
-      "tax": 23,
+      "tax": 31,
       "name": "Andhra Pradesh",
       "code": "37",
       "is_ut": false
@@ -13,7 +13,7 @@
     "pk": 2,
     "model": "tax.State",
     "fields": {
-      "tax": 34,
+      "tax": 30,
       "name": "Arunachal Pradesh",
       "code": "12",
       "is_ut": false
@@ -23,7 +23,7 @@
     "pk": 3,
     "model": "tax.State",
     "fields": {
-      "tax": 17,
+      "tax": 29,
       "name": "Assam",
       "code": "18",
       "is_ut": false
@@ -33,7 +33,7 @@
     "pk": 4,
     "model": "tax.State",
     "fields": {
-      "tax": 20,
+      "tax": 26,
       "name": "Bihar",
       "code": "10",
       "is_ut": false
@@ -43,7 +43,7 @@
     "pk": 5,
     "model": "tax.State",
     "fields": {
-      "tax": 13,
+      "tax": 9,
       "name": "Chhattisgarh",
       "code": "22",
       "is_ut": false
@@ -53,7 +53,7 @@
     "pk": 6,
     "model": "tax.State",
     "fields": {
-      "tax": 10,
+      "tax": 15,
       "name": "Goa",
       "code": "30",
       "is_ut": false
@@ -63,7 +63,7 @@
     "pk": 7,
     "model": "tax.State",
     "fields": {
-      "tax": 5,
+      "tax": 28,
       "name": "Gujarat",
       "code": "24",
       "is_ut": false
@@ -73,7 +73,7 @@
     "pk": 8,
     "model": "tax.State",
     "fields": {
-      "tax": 38,
+      "tax": 15,
       "name": "Haryana",
       "code": "06",
       "is_ut": false
@@ -83,7 +83,7 @@
     "pk": 9,
     "model": "tax.State",
     "fields": {
-      "tax": 10,
+      "tax": 6,
       "name": "Himachal Pradesh",
       "code": "02",
       "is_ut": false
@@ -93,7 +93,7 @@
     "pk": 10,
     "model": "tax.State",
     "fields": {
-      "tax": 20,
+      "tax": 4,
       "name": "Jharkhand",
       "code": "20",
       "is_ut": false
@@ -103,7 +103,7 @@
     "pk": 11,
     "model": "tax.State",
     "fields": {
-      "tax": 6,
+      "tax": 16,
       "name": "Karnataka",
       "code": "29",
       "is_ut": false
@@ -113,7 +113,7 @@
     "pk": 12,
     "model": "tax.State",
     "fields": {
-      "tax": 28,
+      "tax": 12,
       "name": "Kerala",
       "code": "32",
       "is_ut": false
@@ -123,7 +123,7 @@
     "pk": 13,
     "model": "tax.State",
     "fields": {
-      "tax": 29,
+      "tax": 14,
       "name": "Madhya Pradesh",
       "code": "23",
       "is_ut": false
@@ -133,7 +133,7 @@
     "pk": 14,
     "model": "tax.State",
     "fields": {
-      "tax": 39,
+      "tax": 33,
       "name": "Maharashtra",
       "code": "27",
       "is_ut": false
@@ -143,7 +143,7 @@
     "pk": 15,
     "model": "tax.State",
     "fields": {
-      "tax": 28,
+      "tax": 8,
       "name": "Manipur",
       "code": "14",
       "is_ut": false
@@ -153,7 +153,7 @@
     "pk": 16,
     "model": "tax.State",
     "fields": {
-      "tax": 37,
+      "tax": 23,
       "name": "Meghalaya",
       "code": "17",
       "is_ut": false
@@ -163,7 +163,7 @@
     "pk": 17,
     "model": "tax.State",
     "fields": {
-      "tax": 28,
+      "tax": 13,
       "name": "Mizoram",
       "code": "15",
       "is_ut": false
@@ -173,7 +173,7 @@
     "pk": 18,
     "model": "tax.State",
     "fields": {
-      "tax": 37,
+      "tax": 13,
       "name": "Nagaland",
       "code": "13",
       "is_ut": false
@@ -183,7 +183,7 @@
     "pk": 19,
     "model": "tax.State",
     "fields": {
-      "tax": 26,
+      "tax": 12,
       "name": "Orissa",
       "code": "21",
       "is_ut": false
@@ -193,7 +193,7 @@
     "pk": 20,
     "model": "tax.State",
     "fields": {
-      "tax": 2,
+      "tax": 11,
       "name": "Punjab",
       "code": "03",
       "is_ut": false
@@ -203,7 +203,7 @@
     "pk": 21,
     "model": "tax.State",
     "fields": {
-      "tax": 32,
+      "tax": 17,
       "name": "Rajasthan",
       "code": "08",
       "is_ut": false
@@ -213,7 +213,7 @@
     "pk": 22,
     "model": "tax.State",
     "fields": {
-      "tax": 28,
+      "tax": 14,
       "name": "Sikkim",
       "code": "11",
       "is_ut": false
@@ -223,7 +223,7 @@
     "pk": 23,
     "model": "tax.State",
     "fields": {
-      "tax": 11,
+      "tax": 36,
       "name": "Tamil Nadu",
       "code": "33",
       "is_ut": false
@@ -233,7 +233,7 @@
     "pk": 24,
     "model": "tax.State",
     "fields": {
-      "tax": 28,
+      "tax": 1,
       "name": "Telengana",
       "code": "36",
       "is_ut": false
@@ -243,7 +243,7 @@
     "pk": 25,
     "model": "tax.State",
     "fields": {
-      "tax": 15,
+      "tax": 40,
       "name": "Tripura",
       "code": "16",
       "is_ut": false
@@ -253,7 +253,7 @@
     "pk": 26,
     "model": "tax.State",
     "fields": {
-      "tax": 29,
+      "tax": 13,
       "name": "Uttar Pradesh",
       "code": "09",
       "is_ut": false
@@ -263,7 +263,7 @@
     "pk": 27,
     "model": "tax.State",
     "fields": {
-      "tax": 14,
+      "tax": 26,
       "name": "Uttarakhand",
       "code": "05",
       "is_ut": false
@@ -273,7 +273,7 @@
     "pk": 28,
     "model": "tax.State",
     "fields": {
-      "tax": 27,
+      "tax": 39,
       "name": "West Bengal",
       "code": "19",
       "is_ut": false
@@ -283,7 +283,7 @@
     "pk": 29,
     "model": "tax.State",
     "fields": {
-      "tax": 39,
+      "tax": 0,
       "name": "Andaman & Nicobar Islands",
       "code": "35",
       "is_ut": true
@@ -293,7 +293,7 @@
     "pk": 30,
     "model": "tax.State",
     "fields": {
-      "tax": 17,
+      "tax": 0,
       "name": "Chandigarh",
       "code": "04",
       "is_ut": true
@@ -303,7 +303,7 @@
     "pk": 31,
     "model": "tax.State",
     "fields": {
-      "tax": 31,
+      "tax": 0,
       "name": "Dadra & Nagar Haveli",
       "code": "26",
       "is_ut": true
@@ -313,7 +313,7 @@
     "pk": 32,
     "model": "tax.State",
     "fields": {
-      "tax": 24,
+      "tax": 0,
       "name": "Daman & Diu",
       "code": "25",
       "is_ut": true
@@ -323,7 +323,7 @@
     "pk": 33,
     "model": "tax.State",
     "fields": {
-      "tax": 31,
+      "tax": 0,
       "name": "Delhi",
       "code": "07",
       "is_ut": true
@@ -333,7 +333,7 @@
     "pk": 34,
     "model": "tax.State",
     "fields": {
-      "tax": 8,
+      "tax": 0,
       "name": "Lakshadweep",
       "code": "31",
       "is_ut": true
@@ -343,7 +343,7 @@
     "pk": 35,
     "model": "tax.State",
     "fields": {
-      "tax": 35,
+      "tax": 0,
       "name": "Puducherry",
       "code": "34",
       "is_ut": true
@@ -353,7 +353,7 @@
     "pk": 36,
     "model": "tax.State",
     "fields": {
-      "tax": 1,
+      "tax": 0,
       "name": "Jammu & Kashmir",
       "code": "01",
       "is_ut": true

@@ -15,6 +15,16 @@ const router = createRouter({
       component: HomeView,
     },
     {
+      path: "/taxpayer/:username",
+      name: "taxpayer",
+      component: () => import("@/views/EditTaxpayerView.vue"),
+    },
+    {
+      path: "/tax/:id",
+      name: "tax",
+      component: () => import("@/views/EditTaxView.vue"),
+    },
+    {
       path: "/taxes",
       name: "taxes",
       component: TaxListView,
