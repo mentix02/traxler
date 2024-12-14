@@ -75,11 +75,11 @@ def main():
     states: list[dict] = []
     num_states = len(STATE_CODES)
 
-    for i, (code, name) in enumerate(STATE_CODES):
-        states.append(State(i + 1, random.randint(0, 40), name, code).to_json())
+    for i, (code, name) in enumerate(STATE_CODES, start=1):
+        states.append(State(i, random.randint(0, 40), name, code).to_json())
 
-    for i, (code, name) in enumerate(UNION_TERRITORY_CODES):
-        states.append(State(i + 1 + num_states, 0, name, code, is_ut=True).to_json())
+    for i, (code, name) in enumerate(UNION_TERRITORY_CODES, start=1):
+        states.append(State(i + num_states, 0, name, code, is_ut=True).to_json())
 
     json.dump(states, open('data.json', 'w+'), indent=2)
 
